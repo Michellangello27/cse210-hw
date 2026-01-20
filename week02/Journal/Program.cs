@@ -29,8 +29,12 @@ class Program
                     Entry newEntry = new Entry();
 
                     newEntry._date = DateTime.Now.ToShortDateString();
+                    newEntry._time = DateTime.Now.ToShortTimeString();
+                    Console.Write("How are you feeling today? ");
+                    newEntry._mood = Console.ReadLine();
+                    Console.Write("What tag would you like to add? ");
+                    newEntry._tag = Console.ReadLine();
                     newEntry._promptText = promptGenerator.GetRandomPrompt();
-
                     Console.WriteLine(newEntry._promptText);
                     Console.Write("Your response: ");
                     newEntry._entryText = Console.ReadLine();
