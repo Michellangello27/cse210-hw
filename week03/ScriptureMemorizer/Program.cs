@@ -1,3 +1,6 @@
+// IMPROVEMENTS:
+// The program now only hides the words that are still visible.
+
 using System;
 
 class Program
