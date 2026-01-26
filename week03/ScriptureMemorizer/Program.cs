@@ -4,6 +4,11 @@
 // The program now works with a library of scriptures loaded
 // from an external file and selects scriptures at random.
 
+//  Clarifications:
+// To run the program correctly, copy the scriptures.txt file to:
+// bin/Debug/net6.0/
+//   ├----- scriptures.txt (where the program needs it)
+
 using System;
 
 class Program
