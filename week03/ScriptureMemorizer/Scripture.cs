@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections.Generic;//to handle data collections List<Scripture> and List<Word>
 
 public class Scripture
 {
@@ -18,9 +18,13 @@ public class Scripture
         }
     }
 
+    public string GetBookOf()
+    {
+        return _reference.GetBookOf();
+    }
+
     public void HideRandomWords(int numberToHide)
     {
-        // list with only the visible words
         List<Word> visibleWords = new List<Word>();
 
         foreach (Word word in _words)
@@ -31,7 +35,6 @@ public class Scripture
             }
         }
 
-        // Hide random words
         for (int i = 0; i < numberToHide && visibleWords.Count > 0; i++)
         {
             int index = _random.Next(visibleWords.Count);
@@ -42,14 +45,14 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        string scriptureText = "";
+        string text = "";
 
         foreach (Word word in _words)
         {
-            scriptureText += word.GetDisplayText() + " ";
+            text += word.GetDisplayText() + " ";
         }
 
-        return $"{_reference.GetDisplayText()}\n{scriptureText.Trim()}";
+        return $"{_reference.GetDisplayText()}\n{text.Trim()}";
     }
 
     public bool IsCompletelyHidden()
@@ -61,7 +64,6 @@ public class Scripture
                 return false;
             }
         }
-
         return true;
     }
 }

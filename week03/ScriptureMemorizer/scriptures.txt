@@ -1,10 +1,22 @@
-John|3|16|16|For God so loved the world that he gave his only begotten Son that whosoever believeth in him should not perish but have everlasting life
-Proverbs|3|5|6|Trust in the Lord with all thine heart and lean not unto thine own understanding in all thy ways acknowledge him and he shall direct thy paths
-Psalms|23|1|6|The Lord is my shepherd I shall not want he maketh me to lie down in green pastures he leadeth me beside the still waters
-Philippians|4|13|13|I can do all things through Christ which strengtheneth me
-Matthew|11|28|30|Come unto me all ye that labour and are heavy laden and I will give you rest take my yoke upon you and learn of me for I am meek and lowly in heart
-Isaiah|41|10|10|Fear thou not for I am with thee be not dismayed for I am thy God I will strengthen thee yea I will help thee yea I will uphold thee with the right hand of my righteousness
-Romans|8|38|39|For I am persuaded that neither death nor life nor angels nor principalities nor powers nor things present nor things to come shall be able to separate us from the love of God
-Joshua|1|9|9|Have not I commanded thee be strong and of a good courage be not afraid neither be thou dismayed for the Lord thy God is with thee whithersoever thou goest
-Psalms|46|1|1|God is our refuge and strength a very present help in trouble
-2 Nephi|2|25|25|Adam fell that men might be and men are that they might have joy
+Bible|John|3|16|16|For God so loved the world that he gave his only begotten Son that whosoever believeth in him should not perish but have everlasting life
+Bible|Proverbs|3|5|6|Trust in the Lord with all thine heart and lean not unto thine own understanding in all thy ways acknowledge him and he shall direct thy paths
+Bible|Psalms|23|1|6|The Lord is my shepherd I shall not want he maketh me to lie down in green pastures he leadeth me beside the still waters
+Bible|Psalms|46|1|1|God is our refuge and strength a very present help in trouble
+Bible|Philippians|4|13|13|I can do all things through Christ which strengtheneth me
+Bible|Matthew|11|28|30|Come unto me all ye that labour and are heavy laden and I will give you rest
+Bible|Isaiah|41|10|10|Fear thou not for I am with thee be not dismayed for I am thy God I will strengthen thee yea I will help thee yea I will uphold thee with the right hand of my righteousness
+Bible|Romans|8|38|39|For I am persuaded that neither death nor life nor angels nor principalities nor powers nor things present nor things to come shall be able to separate us from the love of God
+Bible|Joshua|1|9|9|Have not I commanded thee be strong and of a good courage be not afraid neither be thou dismayed for the Lord thy God is with thee whithersoever thou goest
+Book of Mormon|2 Nephi|2|25|25|Adam fell that men might be and men are that they might have joy
+Book of Mormon|Mosiah|2|17|17|When ye are in the service of your fellow beings ye are only in the service of your God
+Book of Mormon|Mosiah|4|30|30|But this much I can tell you, that if ye do not watch yourselves, and your thoughts, and your words, and your deeds, and observe the commandments of God, and continue in the faith of what ye have heard concerning the coming of our Lord, even unto the end of your lives, ye must perish. And now, O man, remember, and perish not.
+Book of Mormon|Alma|41|10|10|Do not suppose, because it has been spoken concerning restoration, that ye shall be restored from sin to happiness. Behold, I say unto you, wickedness never was happiness.
+Doctrine and Covenants|D&C|1|1|1|Hearken O ye people of my church saith the voice of him who dwells on high
+Doctrine and Covenants|D&C|6|36|36|Look unto me in every thought; doubt not, fear not.
+Doctrine and Covenants|D&C|10|5|5|Pray always, that you may come off conqueror; yea, that you may conquer Satan, and that you may escape the hands of the servants of Satan that do uphold his work.
+Doctrine and Covenants|D&C|13|1|1|Upon you my fellow servants, in the name of Messiah I confer the Priesthood of Aaron, which holds the keys of the ministering of angels, and of the gospel of repentance, and of baptism by immersion for the remission of sins; and this shall never be taken again from the earth, until the sons of Levi do offer again an offering unto the Lord in righteousness.
+Doctrine and Covenants|D&C|19|23|23|Learn of me, and listen to my words; walk in the meekness of my Spirit, and you shall have peace in me.
+Pearl of Great Price|Moses|1|39|39|For behold this is my work and my glory to bring to pass the immortality and eternal life of man
+Pearl of Great Price|Moses|3|18|18|And I, the Lord God, commanded the man, saying: Of every tree of the garden thou mayest freely eat
+Pearl of Great Price|Moses|4|1|1|And I, the Lord God, spake unto Moses, saying: That Satan, whom thou hast commanded in the name of mine Only Begotten, is the same which was from the beginning, and he came before me, saying—Behold, here am I, send me, I will be thy son, and I will redeem all mankind, that one soul shall not be lost, and surely I will do it; wherefore give me thine honor.
+Pearl of Great Price|Abraham|3|4|4|And the Lord said unto me, by the Urim and Thummim, that Kolob was after the manner of the Lord, according to its times and seasons in the revolutions thereof; that one revolution was a day unto the Lord, after his manner of reckoning, it being one thousand years according to the time appointed unto that whereon thou standest. This is the reckoning of the Lord’s time, according to the reckoning of Kolob.
