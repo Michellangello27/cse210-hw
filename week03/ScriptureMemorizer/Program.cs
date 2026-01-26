@@ -1,4 +1,5 @@
-// IMPROVEMENTS:
+// Showing Creativity and Exceeding Requirements
+// Improvements to the previous version:
 // The program now only hides the words that are still visible.
 // The program now works with a library of scriptures loaded
 // from an external file and selects scriptures at random.
