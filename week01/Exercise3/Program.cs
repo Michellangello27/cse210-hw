@@ -1,6 +1,3 @@
-// Exceeding requirements:
-// - Added mood, time, and tags to each journal entry
-// - Improved user reflection and context awareness
 
 using System;
 

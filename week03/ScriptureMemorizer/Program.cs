@@ -1,5 +1,7 @@
 // IMPROVEMENTS:
 // The program now only hides the words that are still visible.
+// The program now works with a library of scriptures loaded
+// from an external file and selects scriptures at random.
 
 using System;
 
@@ -7,11 +9,8 @@ class Program
 {
     static void Main()
     {
-        Reference reference = new Reference("Proverbs", 3, 5, 6); 
-
-        string text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
-      
-        Scripture scripture = new Scripture(reference, text);
+        ScriptureLibrary library = new ScriptureLibrary("scriptures.txt");
+        Scripture scripture = library.GetRandomScripture();
 
         while (true)
         {

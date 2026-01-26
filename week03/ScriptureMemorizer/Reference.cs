@@ -1,4 +1,3 @@
-using System;
 public class Reference
 {
     private string _book;
@@ -6,7 +5,6 @@ public class Reference
     private int _startVerse;
     private int _endVerse;
 
-    // Single verse builder
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -15,7 +13,6 @@ public class Reference
         _endVerse = verse;
     }
 
-    // Verse range constructor
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;
