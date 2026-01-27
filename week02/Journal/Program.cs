@@ -1,3 +1,9 @@
+// Exceeding requirements:
+// - Added mood, time, and tags to each journal entry
+// - Improved user reflection and context awareness
+// - The program now saves and loads .csv files that can be opened in Excel.
+// - The program correctly handles quotation marks and commas in its content.
+
 using System;
 
 class Program
