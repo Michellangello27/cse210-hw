@@ -1,3 +1,9 @@
+// Exceeding requirements:
+// - Added mood, time, and tags to each journal entry
+// - Improved user reflection and context awareness
+// - The program now saves and loads .csv files that can be opened in Excel.
+// - The program correctly handles quotation marks and commas in its content.
+
 using System;
 
 class Program
@@ -6,45 +12,67 @@ class Program
     {
         PromptGenerator promptGenerator = new PromptGenerator();
         Journal theJournal = new Journal();
-        Entry anEntry = new Entry();
-        anEntry.Display();
+
+        int option = 0;
 
         Console.WriteLine("Welcome to the Journal Program!");
-        int opcion = 0;
+
         do
         {
-            //Console.Clear();
-            Console.WriteLine("Please select one of the following choices");
-            Console.WriteLine(" 1. Write" +
-                              "\n 2. Display" +
-                              "\n 3. Load" +
-                              "\n 4. Save" +
-                              "\n 5. Quit");
-            Console.Write("What would you like to do?");
-            opcion = Convert.ToInt32(Console.ReadLine());
-            switch (opcion)
+            Console.WriteLine("Please select one of the following choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
+
+            int.TryParse(Console.ReadLine(), out option);
+
+            switch (option)
             {
                 case 1:
-                    string prompt = promptGenerator.GetRandomPrompt();
-                    Console.WriteLine(prompt);
+                    Entry newEntry = new Entry();
+
+                    newEntry._date = DateTime.Now.ToShortDateString();
+                    newEntry._time = DateTime.Now.ToShortTimeString();
+                    Console.Write("How are you feeling today? ");
+                    newEntry._mood = Console.ReadLine();
+                    Console.Write("What tag would you like to add? ");
+                    newEntry._tag = Console.ReadLine();
+                    newEntry._promptText = promptGenerator.GetRandomPrompt();
+                    Console.WriteLine(newEntry._promptText);
+                    Console.Write("Your response: ");
+                    newEntry._entryText = Console.ReadLine();
+
+                    theJournal.AddEntry(newEntry);
                     break;
+
                 case 2:
-                    Console.WriteLine("Display");
+                    theJournal.DisplayAll();
                     break;
+
                 case 3:
-                    Console.WriteLine("Load");
+                    Console.Write("Enter the filename to load: ");
+                    string loadFile = Console.ReadLine();
+                    theJournal.LoadFromFile(loadFile);
                     break;
+
                 case 4:
-                    Console.WriteLine("Save");
+                    Console.Write("Enter the filename to save: ");
+                    string saveFile = Console.ReadLine();
+                    theJournal.SaveToFile(saveFile);
                     break;
+
                 case 5:
-                    Console.WriteLine("See you tomorrow, have a blessed day!" + "\n+ goodbye");
+                    Console.WriteLine("See you tomorrow, have a blessed day!");
                     break;
+
                 default:
-                    Console.WriteLine("Please enter a valid option");
+                    Console.WriteLine("Please enter a valid option.");
                     break;
             }
-            Console.ReadKey();
-        } while (opcion != 5);
+
+        } while (option != 5);
     }
 }

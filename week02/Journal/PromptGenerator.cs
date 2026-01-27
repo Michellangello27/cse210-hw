@@ -1,9 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 public class PromptGenerator
 {
     private Random _random = new Random();
-
     public List<string> _prompts = new List<string>()
     {
         "How did you feel the Spirit and the hand of the Lord in your life today?",

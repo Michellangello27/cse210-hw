@@ -2,6 +2,8 @@ using System;
 
 public class PromptGenerator
 {
+    private Random _random = new Random();
+
     public List<string> _prompts = new List<string>()
     {
         "How did you feel the Spirit and the hand of the Lord in your life today?",
@@ -23,8 +25,7 @@ public class PromptGenerator
 
     public string GetRandomPrompt()
     {
-        Random random = new Random();
-        int ind_question = random.Next(_prompts.Count);
-        return _prompts[ind_question];
+        int index = _random.Next(_prompts.Count);
+        return _prompts[index];
     }
 }
