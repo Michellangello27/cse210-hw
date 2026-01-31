@@ -40,18 +40,17 @@ class Program
         // Display video information
         foreach (Video video in videos)
         {
-            Console.WriteLine("╔═════════════════════════════════════════════════════■");
-            Console.WriteLine($"║ Title: {video.GetTitle()}");
-            Console.WriteLine($"║ Author: {video.GetAuthor()}");
-            Console.WriteLine($"║ Duration: {video.GetDuration()} seconds");
-            Console.WriteLine($"║ Number of comments: {video.GetCommentCount()}");
-            Console.WriteLine("║ Comments:");
+            Console.WriteLine("■═════════════════════════════════════════════════════■");
+            Console.WriteLine($" Title: {video.GetTitle()}");
+            Console.WriteLine($" Author: {video.GetAuthor()}");
+            Console.WriteLine($" Duration: {video.GetDuration()} seconds");
+            Console.WriteLine($" Number of comments: {video.GetCommentCount()}");
+            Console.WriteLine(" Comments:");
 
             foreach (Comment comment in video.GetComments())
             {
-                Console.WriteLine($"║ - {comment.GetAuthor()}: {comment.GetText()}");
+                Console.WriteLine($" - {comment.GetAuthor()}: {comment.GetText()}");
             }
-            Console.WriteLine("╚═════════════════════════════════════════════════════■");
         }
     }
 }
