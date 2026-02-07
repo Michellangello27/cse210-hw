@@ -59,13 +59,11 @@ public class ReflectingActivity : Activity
         while (DateTime.Now < endTime)
         {
             string question = GetRandomQuestion();
-
-            // 🔥 pregunta + spinner en la MISMA línea
             Console.Write($"> {question} ");
             ShowSpinner(6);
 
-            Console.WriteLine(); // baja de línea cuando termina el spinner
-            Console.WriteLine(); // espacio visual entre preguntas
+            Console.WriteLine();  
+            Console.WriteLine(); //space between questions  
         }
     }
 

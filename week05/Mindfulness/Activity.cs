@@ -13,10 +13,21 @@ public abstract class Activity
         _description = description;
     }
 
-    public string Name => _name;
-    public string Description => _description;
-    protected int DurationSeconds => _durationSeconds;
-
+    public string Name
+    {
+        get { return _name; }
+    }    
+    public string Description
+    {
+        get { return _description; }
+    }
+    protected int DurationSeconds
+    {
+        get
+        {
+            return _durationSeconds;
+        }
+    }
     public void Run()
     {
         StartActivity();
