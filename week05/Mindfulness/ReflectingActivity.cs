@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 public class ReflectingActivity : Activity
 {
-    private readonly List<string> _prompts;
-    private readonly List<string> _questions;
-    private Random _random = new Random();
+    private List<string> _prompts;
+    private List<string> _questions;
+    private NonRepeatingStringPicker _promptPicker;
+    private NonRepeatingStringPicker _questionPicker;
 
     public ReflectingActivity()
         : base(
-            "Reflecting Activity",
+            "Welcome to the Reflecting Activity",
             "This activity will help you reflect on times in your life when you have shown strength and resilience."
         )
     {
@@ -33,11 +34,14 @@ public class ReflectingActivity : Activity
             "What did you learn about yourself through this experience?",
             "How can you keep this experience in mind in the future?"
         };
+
+        _promptPicker = new NonRepeatingStringPicker(_prompts);
+        _questionPicker = new NonRepeatingStringPicker(_questions);
     }
 
     protected override void RunCore()
     {
-        string prompt = GetRandomPrompt();
+        string prompt = _promptPicker.Next();
 
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine();
@@ -58,22 +62,12 @@ public class ReflectingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            string question = GetRandomQuestion();
+            string question = _questionPicker.Next();
             Console.Write($"> {question} ");
             ShowSpinner(6);
 
             Console.WriteLine();  
             Console.WriteLine(); //space between questions  
         }
-    }
-
-    private string GetRandomPrompt()
-    {
-        return _prompts[_random.Next(_prompts.Count)];
-    }
-
-    private string GetRandomQuestion()
-    {
-        return _questions[_random.Next(_questions.Count)];
     }
 }

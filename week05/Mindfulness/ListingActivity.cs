@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 public class ListingActivity : Activity
 {
-    private readonly List<string> _prompts;
+    private List<string> _prompts;
+    private NonRepeatingStringPicker _promptPicker;
 
     public ListingActivity()
         : base(
-            "Welcome to the Listing Activity",
+            "Welcome to theListing Activity",
             "This activity will help you reflect on the good things in your life by listing as many items as you can in a certain area."
           )
     {
@@ -19,11 +20,13 @@ public class ListingActivity : Activity
             "When have you felt the Holy Ghost this month?",
             "Who are some of your personal heroes?"
         };
+
+        _promptPicker = new NonRepeatingStringPicker(_prompts);
     }
 
     protected override void RunCore()
     {
-        string prompt = GetRandomPrompt();
+        string prompt = _promptPicker.Next();
 
         Console.WriteLine("List responses to the following prompt:");
         Console.WriteLine($"--- {prompt} ---");
@@ -48,11 +51,5 @@ public class ListingActivity : Activity
         }
 
         Console.WriteLine($"\nYou listed {count} items.");
-    }
-
-    private string GetRandomPrompt()
-    {
-        Random rnd = new Random();
-        return _prompts[rnd.Next(_prompts.Count)];
     }
 }

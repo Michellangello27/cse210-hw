@@ -16,23 +16,33 @@ public abstract class Activity
     public string Name
     {
         get { return _name; }
-    }    
+    }
+
     public string Description
     {
         get { return _description; }
     }
+
     protected int DurationSeconds
     {
-        get
-        {
-            return _durationSeconds;
-        }
+        get { return _durationSeconds; }
     }
+
     public void Run()
+    {
+        Run(null);
+    }
+
+    public void Run(ActivityTracker tracker)
     {
         StartActivity();
         RunCore();
         EndActivity();
+
+        if (tracker != null)
+        {
+            tracker.Increment(Name);
+        }
     }
 
     protected abstract void RunCore();
@@ -64,6 +74,7 @@ public abstract class Activity
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {Name}.");
         Console.Write("Returning to menu... ");
         ShowSpinner(3);
+        Console.WriteLine();
     }
 
     private int GetDurationFromUser()
@@ -104,13 +115,13 @@ public abstract class Activity
         for (int i = seconds; i >= 1; i--)
         {
             Console.SetCursorPosition(left, top);
-            Console.Write(i + " "); 
+            Console.Write(i + " ");
             Thread.Sleep(1000);
         }
 
         Console.SetCursorPosition(left, top);
         Console.Write("  ");
 
-        Console.WriteLine(); 
+        Console.WriteLine();
     }
 }
