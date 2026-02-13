@@ -16,13 +16,11 @@ public class SimpleGoal : Goal
 
     public override bool IsComplete()
     {
-        // Usa el campo (evita CS0414)
-        return _isComplete;
+          return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        // Stub: devuelve algo válido para guardar/cargar
         return $"SimpleGoal:{_shortName},{_description},{_points},{_isComplete}";
     }
 }
