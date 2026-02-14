@@ -5,22 +5,24 @@ using System.IO;
 public class ScriptureActivity : Activity
 {
     private NonRepeatingScripturePicker _scriptures;
+    private string _filePath;
 
     public ScriptureActivity(string filePath)
         : base(
-            "Welcome to the Scripture Activity",
+            "Scripture Activity",
             "This activity shows a scripture and asks what ideas or principles come to your mind."
         )
     {
-        List<Scripture> scriptures = LoadFromFile(filePath);
+        _filePath = filePath;
+        List<Scripture> scriptures = LoadFromFile(_filePath);
         _scriptures = new NonRepeatingScripturePicker(scriptures);
     }
 
-    protected override void RunCore()
+    protected override void RunActivity()
     {
         DateTime endTime = DateTime.Now.AddSeconds(DurationSeconds);
 
-        if (_scriptures.RemainingInCycle() == 0)
+        if (_scriptures == null || _scriptures.RemainingInCycle() == 0)
         {
             Console.WriteLine("No scriptures found. Please check scriptures.txt.");
             Console.WriteLine("Press Enter to return...");
@@ -37,10 +39,7 @@ public class ScriptureActivity : Activity
             }
 
             Scripture current = _scriptures.Next();
-            if (current == null)
-            {
-                break;
-            }
+            if (current == null) break;
 
             Console.WriteLine($"--- {current.Reference} ---");
             Console.WriteLine(current.Text);
@@ -51,9 +50,8 @@ public class ScriptureActivity : Activity
             Console.WriteLine();
             Console.Write("Thinking... ");
             ShowSpinner(3);
-            Console.WriteLine("\n");
-
-            if (DateTime.Now >= endTime) break;
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 
@@ -69,7 +67,6 @@ public class ScriptureActivity : Activity
             if (string.IsNullOrWhiteSpace(line))
                 continue;
 
-            // Source|Book|Chapter|StartVerse|EndVerse|Text
             string[] parts = line.Split('|');
             if (parts.Length < 6)
                 continue;
@@ -79,7 +76,6 @@ public class ScriptureActivity : Activity
             string chapter = parts[2].Trim();
             string startVerse = parts[3].Trim();
             string endVerse = parts[4].Trim();
-
             string text = string.Join("|", parts, 5, parts.Length - 5).Trim();
 
             list.Add(new Scripture(source, book, chapter, startVerse, endVerse, text));

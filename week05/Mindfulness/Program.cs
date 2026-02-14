@@ -3,6 +3,7 @@ using System;
 class Program
 {
     /*
+     
      I M P R O V E M E N T S   M A D E:
      **********************************
     1) A new activity was added: ScriptureActivity.

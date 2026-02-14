@@ -9,24 +9,14 @@ public abstract class Activity
 
     protected Activity(string name, string description)
     {
-        _name = name;
-        _description = description;
+        _name = name ?? "";
+        _description = description ?? "";
     }
 
-    public string Name
-    {
-        get { return _name; }
-    }
+    public string Name => _name;
+    public string Description => _description;
 
-    public string Description
-    {
-        get { return _description; }
-    }
-
-    protected int DurationSeconds
-    {
-        get { return _durationSeconds; }
-    }
+    protected int DurationSeconds => _durationSeconds;
 
     public void Run()
     {
@@ -35,19 +25,16 @@ public abstract class Activity
 
     public void Run(ActivityTracker tracker)
     {
-        StartActivity();
-        RunCore();
-        EndActivity();
+        DisplayStartingMessage();
+        RunActivity();
+        DisplayEndingMessage();
 
-        if (tracker != null)
-        {
-            tracker.Increment(Name);
-        }
+        tracker?.Increment(Name);
     }
 
-    protected abstract void RunCore();
+    protected abstract void RunActivity();
 
-    private void StartActivity()
+    protected void DisplayStartingMessage()
     {
         Console.Clear();
 
@@ -64,7 +51,7 @@ public abstract class Activity
         Console.Clear();
     }
 
-    private void EndActivity()
+    protected void DisplayEndingMessage()
     {
         Console.WriteLine();
         Console.Write("Well done! ");
@@ -77,7 +64,7 @@ public abstract class Activity
         Console.WriteLine();
     }
 
-    private int GetDurationFromUser()
+    protected int GetDurationFromUser()
     {
         while (true)
         {
@@ -89,6 +76,7 @@ public abstract class Activity
             Console.WriteLine("Please enter a valid positive number.");
         }
     }
+
 
     protected void ShowSpinner(int seconds)
     {
@@ -107,7 +95,7 @@ public abstract class Activity
         Console.Write(" \b");
     }
 
-    protected void ShowCountdown(int seconds)
+    protected void ShowCountDown(int seconds)
     {
         int left = Console.CursorLeft;
         int top = Console.CursorTop;
@@ -121,7 +109,6 @@ public abstract class Activity
 
         Console.SetCursorPosition(left, top);
         Console.Write("  ");
-
         Console.WriteLine();
     }
 }

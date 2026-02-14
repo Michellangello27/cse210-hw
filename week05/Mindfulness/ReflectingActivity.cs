@@ -10,7 +10,7 @@ public class ReflectingActivity : Activity
 
     public ReflectingActivity()
         : base(
-            "Welcome to the Reflecting Activity",
+            "Reflecting Activity",
             "This activity will help you reflect on times in your life when you have shown strength and resilience."
         )
     {
@@ -39,7 +39,7 @@ public class ReflectingActivity : Activity
         _questionPicker = new NonRepeatingStringPicker(_questions);
     }
 
-    protected override void RunCore()
+    protected override void RunActivity()
     {
         string prompt = _promptPicker.Next();
 
@@ -54,7 +54,7 @@ public class ReflectingActivity : Activity
         Console.WriteLine();
         Console.WriteLine("Now ponder on each of the following questions.");
         Console.Write("You may begin in: ");
-        ShowCountdown(5);
+        ShowCountDown(5);
 
         Console.Clear();
 
@@ -66,8 +66,8 @@ public class ReflectingActivity : Activity
             Console.Write($"> {question} ");
             ShowSpinner(6);
 
-            Console.WriteLine();  
-            Console.WriteLine(); //space between questions  
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

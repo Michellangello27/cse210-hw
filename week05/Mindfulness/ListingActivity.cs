@@ -8,9 +8,9 @@ public class ListingActivity : Activity
 
     public ListingActivity()
         : base(
-            "Welcome to theListing Activity",
+            "Listing Activity",
             "This activity will help you reflect on the good things in your life by listing as many items as you can in a certain area."
-          )
+        )
     {
         _prompts = new List<string>
         {
@@ -24,7 +24,7 @@ public class ListingActivity : Activity
         _promptPicker = new NonRepeatingStringPicker(_prompts);
     }
 
-    protected override void RunCore()
+    protected override void RunActivity()
     {
         string prompt = _promptPicker.Next();
 
@@ -32,9 +32,9 @@ public class ListingActivity : Activity
         Console.WriteLine($"--- {prompt} ---");
         Console.WriteLine();
         Console.Write("You may begin in: ");
-        ShowCountdown(5);
+        ShowCountDown(5);
 
-        Console.WriteLine("\n");
+        Console.WriteLine();
 
         DateTime end = DateTime.Now.AddSeconds(DurationSeconds);
         int count = 0;
