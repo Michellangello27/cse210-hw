@@ -136,7 +136,7 @@ public class GoalManager
         bool isCompleteAfter = selectedGoal.IsComplete();
         if (!wasCompleteBefore && isCompleteAfter)
         {
-            Console.WriteLine("Badge unlocked: Goal completed! ✅");
+            Console.WriteLine("Badge unlocked: Goal completed!");
         }
 
         HandleLevelUp();
@@ -232,8 +232,7 @@ public class GoalManager
         return (score / 1000) + 1;
     }
 
-    // 🔧 CORREGIDOS (sin error CS0165)
-
+   
     private int ReadIntInRange(int min, int max)
     {
         int value = 0;

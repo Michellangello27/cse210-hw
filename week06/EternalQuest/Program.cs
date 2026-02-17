@@ -12,7 +12,7 @@ class Program
         in the console during normal program use.
         */
 
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        Console.WriteLine("This is the EternalQuest Project.");
         GoalManager manager = new GoalManager();
         manager.Start();
     }
